@@ -1,7 +1,7 @@
 # Adventure Game
 This is a simple game that I have developed using python. Run the game with the following command:
 ```
-$ python adventure_game.py
+$ python project.py
 
 ```
 ### Dependencies
