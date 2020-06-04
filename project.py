@@ -6,7 +6,7 @@ items = []
 
 def pause_time(message):
     print(message)
-    time.sleep(1)
+    time.sleep(2)
 
 
 def villian_picker():
@@ -18,7 +18,7 @@ def introduction():
 
     pause_time("Time to start your adventure")
     pause_time(". . . .")
-    pause_time("A " + villian + " has kidnapped"
+    pause_time("A " + villian + " has kidnapped "
                "the beloved princess of this land. ")
     pause_time("Many men have tried and failed to rescue her and now "
                "there is no one left to help ")
@@ -109,13 +109,32 @@ def valid_input(prompt, option1, option2):
     return response
 
 
+def valid_direction(prompt, o1, o2, o3, o4):
+    while True:
+        path = input(prompt).lower()
+        if o1 in path:
+            break
+        elif o2 in path:
+            break
+        elif o3 in path:
+            break
+        elif o4 in path:
+            break
+        else:
+            print("Sorry, I don't understand.")
+    return path
+
+
 def returnToPath():
     pause_time(". . . .")
     pause_time("Which direction shall you take?")
-    path = input("Left to the Murky Forest\n"
-                 "Forward to the " + villian + " Layer\n"
-                 "Right to the Glowing Cave\n"
-                 "Retreat back\n")
+    print("Left to the Murky Forest\n"
+          "Forward to the " + villian + " Layer\n"
+          "Right to the Glowing Cave\n"
+          "Retreat back\n")
+
+    path = valid_direction("Choose a direction\n",
+                           "left", "forward", "right", "back")
 
     if 'left' in path:
         print("You duck into the trees")
